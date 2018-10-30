@@ -1,0 +1,10 @@
+241b95e536025b772a95d4aa02fc34c3 *DESCRIPTION
+bb7bbb9af1cbc332263f730b81b3786a *NAMESPACE
+cd10ac9ffbf3a73f8c83ce5cc78a61e8 *R/generate.data2d.R
+b340c6ff9fae050767098f6c274153e1 *R/generate.data3d.R
+d6db0aae3886a1b6a42a07dcda647349 *R/ludata.R
+a37edc95b92dc7647c5589acb7c330ae *README.md
+362099ed7040a3e50e6de884489502be *data/ludata.R
+4d4653cc64c04b02070f44329fe78c5e *man/generate.data2d.Rd
+9a10b442ef1096a5eba21bcf7047995a *man/generate.data3d.Rd
+a03454d6b38c73f82902b1458fdea123 *man/ludata.Rd
