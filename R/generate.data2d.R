@@ -16,7 +16,7 @@
 #'   References).
 #' @references Xiao, L. , Li, Y. and Ruppert, D. (2013),
 #'   Fast bivariate P-splines: the sandwich smoother. J. R.
-#'   Stat. Soc. B, 75: 577-599.  <doi:10.1111/rssb.12007>
+#'   Stat. Soc. B, 75: 577-599. <doi:10.1111/rssb.12007>
 #' @export
 #' @examples
 #' dat = generate.data2d()

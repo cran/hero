@@ -1,0 +1,6 @@
+library(testthat)
+library(fda)
+library(Matrix)
+library(splines)
+library(hero)
+test_check("hero")

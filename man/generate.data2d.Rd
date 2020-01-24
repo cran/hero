@@ -37,7 +37,7 @@ dat = generate.data2d()
 \references{
 Xiao, L. , Li, Y. and Ruppert, D. (2013),
   Fast bivariate P-splines: the sandwich smoother. J. R.
-  Stat. Soc. B, 75: 577-599.  <doi:10.1111/rssb.12007>
+  Stat. Soc. B, 75: 577-599. <doi:10.1111/rssb.12007>
 }
 \author{
 Joshua French.  Based off code by Luo Xiao (see

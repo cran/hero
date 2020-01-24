@@ -1,16 +1,18 @@
 Package: hero
 Type: Package
-Title: Sandwich Smoother
-Version: 0.0.3
+Title: Spatio-Temporal (Hero) Sandwich Smoother
+Version: 0.4.7
 Author: Joshua French
 Maintainer: Joshua French <joshua.french@ucdenver.edu>
-Description: Data and data-generating functions related to the paper Fast Bivariate Penalized Splines by Xiao et al. (2012) <doi:10.1111/rssb.12007>.    A hero is a specific type of sandwich.  Dictionary.com (2018) <https://www.dictionary.com> describes a hero as: a large sandwich, usually consisting of a small loaf of bread or long roll cut in half lengthwise and containing a variety of ingredients, as meat, cheese, lettuce, and tomatoes. 
+Description: An implementation of the sandwich smoother proposed in Fast Bivariate Penalized Splines by Xiao et al. (2012) <doi:10.1111/rssb.12007>.    A hero is a specific type of sandwich.  Dictionary.com (2018) <https://www.dictionary.com> describes a hero as: a large sandwich, usually consisting of a small loaf of bread or long roll cut in half lengthwise and containing a variety of ingredients, as meat, cheese, lettuce, and tomatoes. 
 Depends: R (>= 2.10)
+Imports: Matrix, splines, optimx, pbapply, rgeos, sp, fields
+Suggests: autoimage, devtools, fda, igraph, testthat
 License: GPL (>= 2)
-LazyData: true
 Encoding: UTF-8
-RoxygenNote: 6.1.0
+LazyData: true
+RoxygenNote: 7.0.2
 NeedsCompilation: no
-Packaged: 2018-10-22 16:40:55 UTC; joshu
+Packaged: 2020-01-24 17:29:20 UTC; joshu
 Repository: CRAN
-Date/Publication: 2018-10-30 16:30:12 UTC
+Date/Publication: 2020-01-24 22:00:02 UTC

@@ -1,0 +1,3 @@
+ludata: lunoisyf1 lutruef1 x z
+tasmax: lat lon tasmax
+wrfg_cgcm3_tasmax: wrfg_cgcm3_tasmax wrfg_lat wrfg_lon
