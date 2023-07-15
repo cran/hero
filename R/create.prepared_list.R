@@ -19,7 +19,7 @@
 #' @param assembled A list of \code{assembled_splines}.  See
 #'   Examples.
 #' @param x The list of arguments at which to evaluate each
-#'   of the splines used to construct \code{a}.
+#'   of the splines used to construct \code{assembled}.
 #' @param Ytilde A list of \code{prepared_*} objects.
 #' @param sum_ysq A vector with the sum of squared \code{data}
 #'   objects used to construct \code{Ytilde}.

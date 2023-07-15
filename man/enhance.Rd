@@ -24,10 +24,7 @@ enhance(
    for which optimal values are to be found. Names on the elements
    of this vector are preserved and used in the results data frame.}
 
-\item{lower}{Bounds on the variables for methods such as \code{"L-BFGS-B"} that can
-   handle box (or bounds) constraints.}
-
-\item{upper}{Bounds on the variables for methods such as \code{"L-BFGS-B"} that can
+\item{lower, upper}{Bounds on the variables for methods such as \code{"L-BFGS-B"} that can
    handle box (or bounds) constraints.}
 
 \item{method}{The method to be used for optimization. The

@@ -69,10 +69,12 @@ See Details of \code{\link{bspline}} for additional
 information about arguments.
 }
 \examples{
+if (requireNamespace("fda", quietly = TRUE)) {
 b = fda::create.bspline.basis(nbasis = 10)
 # interior knots only
 bknots = b$params
 # should match
 knots = knot.design(nbasis = 10, interior = TRUE)
 all.equal(bknots, knots)
+}
 }

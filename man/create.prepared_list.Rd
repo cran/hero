@@ -11,7 +11,7 @@ create.prepared_list(assembled, x, Ytilde, sum_ysq, n)
 Examples.}
 
 \item{x}{The list of arguments at which to evaluate each
-of the splines used to construct \code{a}.}
+of the splines used to construct \code{assembled}.}
 
 \item{Ytilde}{A list of \code{prepared_*} objects.}
 

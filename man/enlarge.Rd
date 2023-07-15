@@ -15,13 +15,13 @@ Distance from original geometry to include in the new
 geometry. Negative values are allowed.}
 
 \item{...}{Additional arguments to pass to
-\code{\link[rgeos]{gBuffer}}.}
+\code{\link[sf]{st_buffer}}.}
 }
 \value{
 An object of class \code{hero_enlarge}.  This is
   simply a list with \code{eborder} (the enlarged
   border), \code{border} (the border of the original
-  coordinates), and the width of the englargement.
+  coordinates), and the width of the enlargement.
   \code{eborder} and \code{border} are
   \code{\link[sp]{SpatialPolygons-class}} objects.
 }
@@ -29,9 +29,9 @@ An object of class \code{hero_enlarge}.  This is
 Enlarge the spatial domain of a
 \code{\link[sp]{SpatialPolygons-class}} object.  If
 \code{width} isn't specified, then 10\% of the maximum
-distance between the points specified by
-\code{sp::bbox(x)} is used.  The
-\code{\link[rgeos]{gBuffer}} function is used to enlarge
+distance between the points specified by the bounding
+box is used. The
+\code{\link[sf]{st_buffer}} function is used to enlarge
 \code{x}.
 }
 \examples{

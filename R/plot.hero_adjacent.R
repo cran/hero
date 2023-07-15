@@ -28,7 +28,7 @@ plot.hero_adjacent = function(x, ...) {
 
   if (!requireNamespace("igraph", quietly = TRUE)) {
     message("The \"igraph\" package will enhance this function. Please install it.")
-    graphics::image(a, ...)
+    graphics::image(as.matrix(a), ...)
 
   } else {
     g = igraph::graph_from_adjacency_matrix(a)

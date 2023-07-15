@@ -26,7 +26,7 @@
 connect = function(...) {
   arg.list = list(...)
   for (i in seq_along(arg.list)) {
-    if (class(arg.list[[i]]) != "hero_radspline") {
+    if (!is.element("hero_radspline", class(arg.list[[i]]))) {
       stop("All objects supplied to connect must be hero_radspline objects")
     }
   }

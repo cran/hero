@@ -64,13 +64,13 @@ enhance = function(obj, par = rep(0, length(obj$n)),
                    method = "L-BFGS-B",
                    control = list(), prepare = TRUE,
                    loggcv = FALSE, ...) {
-  if (class(obj) != "prepared_numeric" &
-      class(obj) != "prepared_matrix" &
-      class(obj) != "prepared_array" &
-      class(obj) != "prepared_starray" &
-      class(obj) != "prepared_sts" &
-      class(obj) != "prepared_list") {
-    stop("obj must be of class prepared_numeric, prepared_matrix, prepared_array, prepared_starray, prepared_sts, or prepared_list.  Please use the prepare function to prepare your data.")
+  # types of prepared objects
+  prepared_types = c("prepared_numeric", "prepared_matrix",
+                     "prepared_array", "prepared_starray",
+                     "prepared_sts", "prepared_list", "prepared_sequential")
+  # confirm obj has appropriate type
+  if (!any(is.element(class(obj), prepared_types))) {
+    stop("obj must be of class 'prepared_numeric', 'prepared_matrix', 'prepared_array', 'prepared_starray', 'prepared_sts', 'prepared_list', or 'prepared_sequential'.  Please use a prepare function to prepare your data.")
   }
   if (length(loggcv) != 1) {
     stop("loggcv must be a single logical value")
@@ -79,18 +79,16 @@ enhance = function(obj, par = rep(0, length(obj$n)),
     stop("loggcv must be a single logical value")
   }
 
-  if (class(obj) == "prepared_numeric") {
+  if (is.element("prepared_numeric", class(obj))) {
     results = stats::optimize(loglambda2gcv,
                               lower = lower, upper = upper,
                               obj = obj, loggcv = loggcv,
                               ...)
     obj$loglambda = results$minimum
     obj$results = results
-  } else if (class(obj) == "prepared_matrix" |
-             class(obj) == "prepared_array" |
-             class(obj) == "prepared_starray" |
-             class(obj) == "prepared_sts" |
-             class(obj) == "prepared_list") {
+  } else if (any(is.element(class(obj),
+                c("prepared_matrix", "prepared_array", "prepared_starray",
+                  "prepared_sts", "prepared_list", "prepared_sequential")))) {
     results = optimx::optimx(par = par, fn = loglambda2gcv,
                              method = method,
                              lower = lower, upper = upper,

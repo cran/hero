@@ -17,12 +17,14 @@
 #' @return An ascending sequence of univarite knot locations.
 #' @export
 #' @examples
+#' if (requireNamespace("fda", quietly = TRUE)) {
 #' b = fda::create.bspline.basis(nbasis = 10)
 #' # interior knots only
 #' bknots = b$params
 #' # should match
 #' knots = knot.design(nbasis = 10, interior = TRUE)
 #' all.equal(bknots, knots)
+#' }
 knot.design <- function(rangeval = 0:1,
                         nbasis,
                         nknots, norder = 4, extend = FALSE,

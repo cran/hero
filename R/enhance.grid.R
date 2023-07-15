@@ -27,6 +27,7 @@
 #'   along with an additional component, \code{results},
 #'   that contains the optimization results. Otherwise, the
 #'   complete results of the grid search.
+#' @inheritParams pbapply::pbapply
 #' @export
 #' @author Joshua French
 #' @examples
@@ -51,7 +52,7 @@
 #' obj = prepare(data, list(x1, x2), list(b1, b2))
 #' enhance.grid(obj, prepare = FALSE)
 enhance.grid = function(obj, par, prepare = TRUE,
-                        loggcv = FALSE, ...) {
+                        loggcv = FALSE, ..., cl = NULL) {
   if (missing(par)) {
     par = matrix(rep(c(-20, 0, 20), each = length(obj$n)),
                  byrow = TRUE, ncol = length(obj$n))
@@ -63,17 +64,17 @@ enhance.grid = function(obj, par, prepare = TRUE,
     stop("ncol(par) does not match the dimensionality of obj, specifically,
          ncol(par) != length(obj$n)")
   }
-  if (class(obj) != "prepared_numeric" &
-      class(obj) != "prepared_matrix" &
-      class(obj) != "prepared_array" &
-      class(obj) != "prepared_starray" &
-      class(obj) != "prepared_sts" &
-      class(obj) != "prepared_list") {
-    stop("obj must be of class prepared_numeric, prepared_matrix, prepared_array, prepared_starray, prepared_sts, or prepared_list.  Please use the prepare function to prepare your data.")
+  # types of prepared objects
+  prepared_types = c("prepared_numeric", "prepared_matrix",
+                     "prepared_array", "prepared_starray",
+                     "prepared_sts", "prepared_list", "prepared_sequential")
+  # confirm obj has appropriate type
+  if (!any(is.element(class(obj), prepared_types))) {
+    stop("obj must be of class 'prepared_numeric', 'prepared_matrix', 'prepared_array', 'prepared_starray', 'prepared_sts', 'prepared_list', or 'prepared_sequential'.  Please use a prepare function to prepare your data.")
   }
   colnames(par) = paste0("par_", seq_len(ncol(par)))
   gcv = pbapply::pbapply(par, 1, loglambda2gcv, obj = obj,
-                         loggcv = loggcv)
+                         loggcv = loggcv, cl = cl)
   wmin = which.min(gcv)
 
   obj$loglambda = par[wmin, ]

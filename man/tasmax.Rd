@@ -6,8 +6,10 @@
 \alias{lon}
 \alias{lat}
 \title{Computer-generated temperature data}
-\format{Matrices \code{lon} and \code{lat} and array
-  \code{tasmax}.}
+\format{
+Matrices \code{lon} and \code{lat} and array
+  \code{tasmax}.
+}
 \usage{
 data(tasmax)
 }

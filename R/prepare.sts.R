@@ -77,10 +77,10 @@ arg_check_prepare_sts = function(coords, times,
   if (!is.numeric(times) | !is.vector(times)) {
     stop("times must be a numeric vector")
   }
-  if (class(rs) != "hero_radspline") {
+  if (!is.element("hero_radspline", class(rs))) {
     stop("rs is not a hero_radspline")
   }
-  if (class(bs) != "hero_bspline") {
+  if (!is.element("hero_bspline", class(bs))) {
     stop("bs is not a hero_bspline")
   }
   if (length(m) != 1 | !is.numeric(m) | m < 1) {

@@ -1,12 +1,9 @@
 #' @rdname hero
+#' @param fitted A logical value indicating whether the fitted values should be
+#'   computed. The default is \code{FALSE}.
 #' @export
-hero.prepared_list = function(x, ...) {
+hero.prepared_list = function(x, ..., fitted = FALSE) {
   arglist = list(...)
-  if (is.null(arglist$fitted)) {
-    fitted = TRUE
-  } else {
-    fitted = arglist$fitted
-  }
   if (length(fitted) != 1) stop("fitted must be a single logical value")
   if (!is.logical(fitted)) stop("fitted must be a single logical value")
 
@@ -17,7 +14,8 @@ hero.prepared_list = function(x, ...) {
 
   out = lapply(x$Ytilde, function(Y.tilde){
     if (!fitted) {
-      return(list(coefficients = rh.seq(parts, Y.tilde)))
+      return(list(coefficients = rh.seq(parts, Y.tilde),
+                  fitted = NA))
     } else {
       coeffs = rh.seq(parts, Y.tilde)
       return(list(coefficients = coeffs,
@@ -27,5 +25,3 @@ hero.prepared_list = function(x, ...) {
   class(out) = c("hero_list", "hero")
   return(out)
 }
-
-

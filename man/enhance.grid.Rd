@@ -4,7 +4,7 @@
 \alias{enhance.grid}
 \title{Enhance penalty value using grid search}
 \usage{
-enhance.grid(obj, par, prepare = TRUE, loggcv = FALSE, ...)
+enhance.grid(obj, par, prepare = TRUE, loggcv = FALSE, ..., cl = NULL)
 }
 \arguments{
 \item{obj}{A \code{prepared_*} object from a
@@ -31,6 +31,15 @@ data sets.  Default is \code{TRUE}.}
 
 \item{...}{Additional arguments to pass to to the
 \code{\link{loglambda2gcv}} function.}
+
+\item{cl}{
+A cluster object created by \code{\link{makeCluster}},
+or an integer to indicate number of child-processes
+(integer values are ignored on Windows) for parallel evaluations
+(see Details on performance).
+It can also be \code{"future"} to use a future backend (see Details),
+\code{NULL} (default) refers to sequential evaluation.
+}
 }
 \value{
 By default, a \code{prepared_*} object with the

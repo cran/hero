@@ -1,5 +1,6 @@
 context("test knot design")
 
+if(requireNamespace("fda", quietly = TRUE)) {
 test_that("knot.design matches create.bspline.basis", {
   o = 1:5
   nb = seq(10, 50, len = 6)
@@ -20,5 +21,6 @@ test_that("knot.design matches create.bspline.basis", {
     }
   }
 })
+}
 
 

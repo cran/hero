@@ -6,8 +6,10 @@
 \alias{wrfg_lon}
 \alias{wrfg_lat}
 \title{Computer-generated temperature data}
-\format{Matrices \code{wrfg_lon} and \code{wrfg_lat} and array
-  \code{wrfg_cgcm3_tasmax}.}
+\format{
+Matrices \code{wrfg_lon} and \code{wrfg_lat} and array
+  \code{wrfg_cgcm3_tasmax}.
+}
 \usage{
 data(wrfg_cgcm3_tasmax)
 }

@@ -41,13 +41,13 @@
 #' obj = prepare(data, x, splines)
 #' loglambda2gcv(c(0, 0), obj)
 loglambda2gcv = function(loglambda, obj, loggcv = FALSE) {
-  if (class(obj) != "prepared_numeric" &
-      class(obj) != "prepared_matrix" &
-      class(obj) != "prepared_array" &
-      class(obj) != "prepared_starray" &
-      class(obj) != "prepared_sts" &
-      class(obj) != "prepared_list") {
-    stop("obj must be produced by the *prepare* function")
+  # types of prepared objects
+  prepared_types = c("prepared_numeric", "prepared_matrix",
+                     "prepared_array", "prepared_starray",
+                     "prepared_sts", "prepared_list", "prepared_sequential")
+  # confirm obj has appropriate type
+  if (!any(is.element(class(obj), prepared_types))) {
+    stop("obj must be produced by a prepare function")
   }
   if (!is.numeric(loglambda)) {
     stop("loglambda must be numeric")
@@ -64,7 +64,7 @@ loglambda2gcv = function(loglambda, obj, loggcv = FALSE) {
   traced = prod(sapply(dtildei, sum))
   den = (1 - traced/prod(obj$n))^2
 
-  if (class(obj) != "prepared_list") {
+  if (!any(is.element(class(obj), c("prepared_list", "prepared_sequential")))) {
     ytilde = as.vector(obj$Ytilde)
     gcv = (obj$sum_ysq + sum((ytilde*dtilde)^2) - 2*sum((ytilde*sqrt(dtilde))^2))/den
   } else {

@@ -37,10 +37,12 @@ x2 = bspline(nbasis = 10, extend = TRUE)
 plot(x2, kcol = "grey")
 
 # compare to plot.fd
-x3 = fda::create.bspline.basis(nbasis = 10)
-par(mfrow = c(2, 1))
-plot(x, kcol = "grey")
-title("plot.hero_bspline")
+if (requireNamespace("fda", quietly = TRUE)) {
+   x3 = fda::create.bspline.basis(nbasis = 10)
+   par(mfrow = c(2, 1))
+   plot(x, kcol = "grey")
+   title("plot.hero_bspline")
+}
 plot(x3)
 title("plot.fd")
 }

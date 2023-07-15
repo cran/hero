@@ -26,6 +26,10 @@
 #' @references Xiao, L. , Li, Y. and Ruppert, D. (2013),
 #'   Fast bivariate P-splines: the sandwich smoother. J. R.
 #'   Stat. Soc. B, 75: 577-599. <doi:10.1111/rssb.12007>
+#'
+#'   French, Joshua P., and Piotr S. Kokoszka. "A sandwich
+#'   smoother for spatio-temporal functional data." Spatial
+#'   Statistics 42 (2021): 100413.
 #' @export
 #' @examples
 #' # create b-splines

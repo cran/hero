@@ -8,10 +8,12 @@
 \alias{lutruef1}
 \alias{lunoisyf1}
 \title{Data for f1 function from Lu et al. (2012)}
-\format{The sequences \code{x} and \code{z}, the
+\format{
+The sequences \code{x} and \code{z}, the
 \code{lutruef1} data matrix with 60 rows and 80 columns,
 and the \code{lunoisyf1} data matrix with 60 rows and 80
-columns.}
+columns.
+}
 \usage{
 data(ludata)
 }

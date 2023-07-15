@@ -1,3 +1,4 @@
+if (requireNamespace("fda", quietly = TRUE)) {
 context("predict.hero_bspline")
 nb = seq(10, 25, len = 4)
 o = 1:6
@@ -17,3 +18,4 @@ test_that("compare predict.hero_bspline to predict.fd", {
     }
   }}
 )
+}
